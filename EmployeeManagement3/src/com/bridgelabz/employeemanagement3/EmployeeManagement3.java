@@ -2,22 +2,20 @@ package com.bridgelabz.employeemanagement3;
 import java.util.*;
 public class EmployeeManagement3 {
     //UC7
-    /*Refactor the Code
-to write a Class
-Method to Compute
-Employee Wage - Use Class Method and Class
+    /*Compute Employee Wage
+for multiple companies - Note: Each Company has its own
+wage, number of working days
+and working hours per month
+- Use Class Method with function
+parameters instead of Class
 Variables*/
-    static final int wagePerHour=20;
-    static final int fullDayHours=8;
-    static final int partTimeHours=4;
-    static final int maxWorkingDays=20;
-    static int totalWorkingDays=0;
-    static int monthlyWage=0;
-    static int dailyWage=0;
-    static int totalWorkingHours=0;
-    static final int maxWorkingHours=100;
-    static int workingHours=0;
-    public static void computeEmployeeWage(){
+    public static void computeEmployeeWage(String companyName, int wagePerHour, int fullDayHours, int partTimeHours, int maxWorkingDays,int maxWorkingHours){
+       int totalWorkingDays=0;
+       int totalWorkingHours=0;
+       int dailyWage=0;
+       int workingHours=0;
+       int monthlyWage=0;
+
         Random random = new Random();
 
         while (totalWorkingDays<maxWorkingDays && totalWorkingHours<maxWorkingHours) {
@@ -54,7 +52,25 @@ Variables*/
 
     public static void main(String[] args) {
         System.out.println("Welcome to employee management using classes, version - 3.");
-        computeEmployeeWage();
+        // Compute employee wage for Company A
+        String companyNameA = "Company A";
+        int wagePerHourA = 20;
+        int fullDayHoursA = 8;
+        int partTimeHoursA = 4;
+        int maxWorkingDaysA = 20;
+        int maxWorkingHoursA = 100;
+
+        computeEmployeeWage(companyNameA, wagePerHourA, fullDayHoursA, partTimeHoursA, maxWorkingDaysA, maxWorkingHoursA);
+        System.out.println("------------------------");
+
+        String companyNameB = "Company B";
+        int wagePerHourB = 20;
+        int fullDayHoursB = 8;
+        int partTimeHoursB = 4;
+        int maxWorkingDaysB = 22;
+        int maxWorkingHoursB = 120;
+        System.out.println(companyNameB);
+        computeEmployeeWage(companyNameB,wagePerHourB,fullDayHoursB,partTimeHoursB,maxWorkingDaysB,maxWorkingHoursB);
 
     }
 }
