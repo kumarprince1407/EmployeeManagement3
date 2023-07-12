@@ -1,12 +1,12 @@
 package com.bridgelabz.employeemanagement3;
 import java.util.*;
 public class EmployeeManagement3 {
-    //UC6
-    /*Calculate Wages till
-a condition of total
-working hours or
-days is reached for
-a month - Assume 100 hours and 20 days*/
+    //UC7
+    /*Refactor the Code
+to write a Class
+Method to Compute
+Employee Wage - Use Class Method and Class
+Variables*/
     static final int wagePerHour=20;
     static final int fullDayHours=8;
     static final int partTimeHours=4;
@@ -17,11 +17,10 @@ a month - Assume 100 hours and 20 days*/
     static int totalWorkingHours=0;
     static final int maxWorkingHours=100;
     static int workingHours=0;
-    public static void main(String[] args) {
-        System.out.println("Welcome to employee management using classes, version - 3.");
+    public static void computeEmployeeWage(){
         Random random = new Random();
 
-        while (totalWorkingDays<maxWorkingDays || totalWorkingHours<maxWorkingHours) {
+        while (totalWorkingDays<maxWorkingDays && totalWorkingHours<maxWorkingHours) {
             int attendance = random.nextInt(3);
             switch (attendance) {
                 case 0:
@@ -50,6 +49,12 @@ a month - Assume 100 hours and 20 days*/
         System.out.println("Total working hours: "+ totalWorkingHours);
         System.out.println("Monthly salary: "+ monthlyWage);
 
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Welcome to employee management using classes, version - 3.");
+        computeEmployeeWage();
 
     }
 }
